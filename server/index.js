@@ -23,7 +23,7 @@ const isValidEvent = (e) => {
     // Note how we can also test if received data is indeed RFC3339-compatible by using regex.
     // It's not clear whether we should validate date this way based on the task description though
 
-    // return event && tags && Array.isArray(tags) && url && title && /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/.test(ts)
+    // return event && tags && Array.isArray(tags) && url && title && /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}[+-]\d{2}:\d{2}/.test(ts)
 }
 
 // Store event(s) in db
