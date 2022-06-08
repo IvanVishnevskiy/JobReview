@@ -49,6 +49,8 @@ class Tracker {
             ts: toISOString(new Date()),
         }
         this.buffer.push(bufferEvent)
+
+        // if it is a click-link event, send data using sendBeacon
         if (event === 'click-link') this.handleNavigationOrTabClose()
         else this.report()
     }
@@ -120,6 +122,8 @@ class Tracker {
 
 const tracker = new Tracker({ path: 'http://localhost:8001/track' })
 
+// We need this event to detect when user closes tab or browser so that 
+// we don't ever lose any tracking data
 document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
         tracker.handleNavigationOrTabClose()
