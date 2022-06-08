@@ -1,0 +1,38 @@
+{
+  "name": "jobreview",
+  "version": "1.0.0",
+  "description": "Job Review",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "node ./client/index.js",
+    "client-dev": "nodemon --exec npm run client --watch ./client",
+    "server": "node ./server/index.js",
+    "server-dev": "nodemon --exec npm run server --watch ./server",
+    "dev": "concurrently --kill-others \"npm run client-dev\" \"npm run server-dev\"",
+    "prod": "concurrently --kill-others \"npm run client\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanVishnevskiy/JobReview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanVishnevskiy/JobReview/issues"
+  },
+  "homepage": "https://github.com/IvanVishnevskiy/JobReview#readme",
+  "dependencies": {
+    "@koa/cors": "^3.3.0",
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "mongodb": "^4.7.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "nodemon": "^2.0.16"
+  }
+}
